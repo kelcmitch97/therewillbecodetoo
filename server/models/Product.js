@@ -11,7 +11,8 @@ const productSchema = new Schema({
       type: String
     },
     image: {
-      type: String
+      type: String,
+      test: /\.(png|jpe?g|gif)$/i
     },
     price: {
       type: Number,
