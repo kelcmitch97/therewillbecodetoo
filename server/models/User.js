@@ -7,6 +7,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      trim: true
     },
     email: {
       type: String,
@@ -17,6 +18,7 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
+      minLength: 5
     },
   },
   // set this to use virtual below
