@@ -32,6 +32,10 @@ const typeDefs = gql`
     user: User
   }
 
+  input ProductInfo {
+    
+  }
+
   type Query {
     me: User
     users: [User]
@@ -45,6 +49,11 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addOrder(products: [ID]!): Order
+    addProduct( )
+    updateProduct(_id: ID!, quantity: Int!): Product
+    removeProduct(_id: ID!, quantity: Int!): Product
+
   }
 `;
 
