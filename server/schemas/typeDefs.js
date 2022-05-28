@@ -12,6 +12,7 @@ const typeDefs = gql`
     username: String
     email: String
     orders: [Order]
+    products: [Product]
   }
 
   type Product {

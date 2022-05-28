@@ -99,15 +99,16 @@ const resolvers = {
 
     addProduct: async (parent, args, context) => {
       if (context.user) {
-        const product = await Product.create({ ...args, username: context.user.username });
+
+        const product = await Product.create(args.productData);
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { products: product._id } },
+          { $push: { products: args.productData } },
           { new: true }
         );
 
-        return thought;
+        return product;
       }
 
       throw new AuthenticationError('You need to be logged in!');
